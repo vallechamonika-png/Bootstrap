@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - ☕CoffeeToffee</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        body{
+            background-color: #f5f5f5;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background-color: #4f3e2f;
+             position:fixed;
+    top:0;
+    z-index:999;
+    width: 100%;
+            
+        }
+
+        
+
+        .logo{
+    color:#b07d4f;
+    font-size:30px;
+    font-weight:bold;
+    animation:float 3s infinite ease-in-out;
+}
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#d4a373;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+         .cart-icon{
+    background:#d4a373;
+    padding:10px 20px;
+    border-radius:5px;
+    font-weight:bold;
+    text-align: right;
+
+       
+
+}
+
+/* HERO */
+
+.hero {
+    margin-top: 0;
+    height: 70vh;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: beige;
+}
+
+.hero h1 {
+    font-size: 55px;
+     animation:fadeUp 1s ease;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    
+      animation:fadeUp 1.2s ease;
+
+}
+
+/* MENU */
+
+.menu {
+    padding: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3e2723;
+    font-size: 32px;
+       animation:fadeUp 1.3s ease;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
+}
+.card{
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+
+    transition:0.8s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+.card{
+    background: rgba(255,255,255,0.95);
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08),
+        0 5px 10px rgba(0,0,0,0.04);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    cursor:pointer;
+}
+
+.card:hover{
+    transform: translateY(-15px) scale(1.03);
+
+    box-shadow:
+        0 25px 40px rgba(0,0,0,0.18),
+        0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+
+    transition: transform 0.8s ease;
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    color:#3e2723;
+    margin-bottom:10px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+.price{
+    font-size:26px;
+    font-weight:bold;
+    color:#d4a373;
+    margin-bottom:18px;
+}
+
+.btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #3e2723,
+        #6f4e37
+    );
+
+    color:white;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(111,78,55,0.35);
+
+    background:linear-gradient(
+        135deg,
+        #d4a373,
+        #b07d4f
+    );
+}
+/* CART */
+
+.cart {
+    background: white;
+    margin: 40px 50px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+    color: #3e2723;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4a373;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:400px;
+    margin:10% auto;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+
+    animation:modalPop 0.35s ease;
+}
+
+@keyframes modalPop{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.close{
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close:hover{
+    color:red;
+}
+.checkout-btn{
+    margin-top:20px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #d4a373,
+        #b07d4f
+    );
+
+    border:none;
+    border-radius:50px;
+
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1px;
+
+    box-shadow:
+        0 8px 20px rgba(176,125,79,0.25);
+
+    transition:
+        all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.checkout-btn:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(176,125,79,0.4);
+
+    background:linear-gradient(
+        135deg,
+        #e2b07f,
+        #c48a54
+    );
+}
+
+
+.checkout-btn::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:0.8s;
+}
+
+.checkout-btn:hover::before{
+    left:150%;
+}
+
+.checkout-btn:active{
+    transform:translateY(-2px) scale(0.98);
+}
+#cart-items button{
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+     background:#4f3e2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .menu {
+        padding: 20px;
+    }
+
+    .cart {
+        margin: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <header>
+
+        <nav>
+
+            <div class="logo"> ☕CoffeeToffee</div>
+
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact </a></li>
+                  <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+
+  <div class="cart-icon"
+     onclick="document.querySelector('.cart').scrollIntoView({behavior:'smooth'})"
+     style="cursor:pointer;">
+    🛒 Cart: <span id="cart-count">0</span>
+</div>
+        </nav>
+       
+    </header>
+    <section class="hero">
+        <div>
+            <h1>Welcome To CoffeeToffee</h1>
+            <p>Fresh Coffee . Delicious Snacks . Great Experience</p>
+        </div>
+
+    </section>
+    <section class="menu">
+    <h2 class="section-title">HOT COFFEES</h2>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2067432/pexels-photo-2067432.jpeg" alt="Espresso">
+            <div class="card-content">
+                <h3>Espresso</h3>
+                <p>Strong and rich coffee made from premium beans.</p>
+                <div class="price">$4</div>
+                <button class="btn" onclick="addtocart('Espresso', 4)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/11160120/pexels-photo-11160120.jpeg" alt="Cappuccino">
+            <div class="card-content">
+                <h3>Cappuccino</h3>
+                <p>Creamy cappuccino topped with milk foam.</p>
+                <div class="price">$7</div>
+                <button class="btn" onclick="addtocart('Cappuccino', 7)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg" alt="Cafe Latte">
+            <div class="card-content">
+                <h3>Cafe Latte</h3>
+                <p>Smooth espresso mixed with steamed milk.</p>
+                <div class="price">$5</div>
+                <button class="btn" onclick="addtocart('Cafe Latte', 5)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/13167705/pexels-photo-13167705.jpeg" alt="Americano">
+            <div class="card-content">
+                <h3>Americano</h3>
+                <p>Espresso diluted with hot water.</p>
+                <div class="price">$9</div>
+                <button class="btn" onclick="addtocart('Americano', 9)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/13737035/pexels-photo-13737035.jpeg" alt="Mocha">
+            <div class="card-content">
+                <h3>Mocha</h3>
+                <p>Latte blended with chocolate and topped with whipped cream.</p>
+                <div class="price">$12</div>
+                <button class="btn" onclick="addtocart('Mocha', 12)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/15635933/pexels-photo-15635933.jpeg" alt="Macchiato">
+            <div class="card-content">
+                <h3>Macchiato</h3>
+                <p>Espresso topped with a thin layer of foamed milk.</p>
+                <div class="price">$8</div>
+                <button class="btn" onclick="addtocart('Macchiato', 8)">Add To Cart</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </section>
+    <hr>
+    
+    <section class="menu">
+        <h2 class="section-title">COLD COFFEES</h2>
+        
+        <div class="menu-container">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/36788555/pexels-photo-36788555.jpeg" alt="">
+                <div class="card-content">
+                <h3>Iced Latte</h3>
+                <p>Creamy classic combination of Espresso with cold milk.</p>
+                <div class="price" >$3</div>
+                <button class="btn" onclick="addtocart('Iced Latte' , 3)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+             <div class="card">
+                <img src="https://images.pexels.com/photos/4438014/pexels-photo-4438014.jpeg" alt="">
+                <div class="card-content">
+                <h3>Frappuccino</h3>
+                <p>Mixture of coffee with milk, ice and sweet flavoring syrups.</p>
+                <div class="price" >$6</div>
+                <button class="btn" onclick="addtocart('Frappuccino' , 6)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+             <div class="card">
+                <img src="https://images.pexels.com/photos/36579971/pexels-photo-36579971.png" alt="">
+                <div class="card-content">
+                <h3>Affogato</h3>
+                <p>Scoop of Vanilla gelato or ice cream "drowned" in a hot shot of fresh Espresso.</p>
+                <div class="price" >$15</div>
+                <button class="btn" onclick="addtocart('Affogato' , 15)">Add To Cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <hr>
+
+
+    <section class="menu">
+        <h2 class="section-title">Snacks & Desserts</h2>
+        <div class="menu-container">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/33565671/pexels-photo-33565671.jpeg" alt="">
+                <div class="card-content">
+                <h3>Butter Croissant</h3>
+                <p>Freshly baked buttery Croissant.</p>
+                <div class="price">$3</div>
+                <button class="btn" onclick="addtocart('Butter Croissant', 3)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/17738649/pexels-photo-17738649.jpeg" alt="">
+                <div class="card-content">
+                <h3>Blueberry Muffin</h3>
+                <p>Soft muffin packed with blueberies.</p>
+                <div class="price">$5</div>
+                <button class="btn" onclick="addtocart('Blueberry Muffin', 5)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/35583854/pexels-photo-35583854.jpeg" alt="">
+                <div class="card-content">
+                <h3> Strawberry Cheesecake</h3>
+                <p>Perfect slice of Strawberry Cheesecake granished with fresh strawberies.</p>
+                <div class="price">$7</div>
+               <button class="btn" onclick="addtocart('Strawberry Cheesecake', 7)">Add To Cart</button>
+               </div>
+            </div>
+
+
+
+
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4655032/pexels-photo-4655032.jpeg" alt="">
+                <div class="card-content">
+                <h3> Chocolate Brownies</h3>
+                <p>Freshly baked fudgy chocolate brownies.</p>
+                <div class="price">$4</div>
+                <button class="btn" onclick="addtocart('Chocolate Brownies', 4)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/19901655/pexels-photo-19901655.jpeg" alt="">
+                <div class="card-content">
+                <h3>Caramel Cake</h3>
+                <p>A slice of caramel cake topped with Caramel glaze.</p>
+                <div class="price">$8</div>
+                <button class="btn" onclick="addtocart('Caraamel Cake', 8)">Add To Cart</button>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/16974019/pexels-photo-16974019.jpeg" alt="">
+                <div class="card-content">
+                <h3>Cookies</h3>
+                <p>Red velvet cookies with soft creamy filling.</p>
+                <div class="price">$5</div>
+                <button class="btn" onclick="addtocart('Cookies', 5)">Add To Cart</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">  </ul>
+
+        <div class="total">
+            Total: $<span id="total">0</span>
+
+        </div>
+        <button class="btn checkout-btn"onclick="Checkout()" >Checkout</button>
+
+    </section>
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Order Summary</h2>
+
+        <p><strong>Items:</strong> <span id="modal-items"></span></p>
+        <p><strong>Total:</strong> $<span id="modal-total"></span></p>
+
+        <button class="btn" onclick="confirmOrder()">
+            Confirm Order
+        </button>
+    </div>
+</div>
+
+
+
+     <footer>
+        <p>@ 2026 CoffeeToffee | All Rights Reserved</p>
+     </footer>
+
+
+
+
+
+
+
+<script>
+let cart = [];
+let total = 0;
+
+const cartItems = document.getElementById("cart-items");
+const cartCount = document.getElementById("cart-count");
+const totalElement = document.getElementById("total");
+
+function updateCart() {
+    cartItems.innerHTML = "";
+    total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span>${item.name} - $${item.price}</span>
+            <button onclick="removeItem(${index})">Remove</button>
+        `;
+        cartItems.appendChild(li);
+    });
+
+    cartCount.textContent = cart.length;
+    totalElement.textContent = total.toFixed(2);
+
+    localStorage.setItem("coffeeCart", JSON.stringify(cart));
+}
+
+function addtocart(itemName, itemPrice) {
+    cart.push({
+        name: itemName,
+        price: itemPrice
+    });
+
+    updateCart();
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function Checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    document.getElementById("modal-items").textContent = cart.length;
+    document.getElementById("modal-total").textContent = total.toFixed(2);
+
+    document.getElementById("checkoutModal").style.display = "block";
+}
+window.onload = function () {
+    const savedCart = localStorage.getItem("coffeeCart");
+
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCart();
+    }
+};
+function closeModal() {
+    document.getElementById("checkoutModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("checkoutModal");
+
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+function confirmOrder() {
+
+    alert("✅ Order Placed Successfully!");
+
+    cart = [];
+    total = 0;
+
+    localStorage.removeItem("coffeeCart");
+
+    updateCart();
+
+    closeModal();
+}
+
+</script>
+    
+</body>
+</html>

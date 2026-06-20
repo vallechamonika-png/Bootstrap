@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoffeeToffee - Contact Us</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* Navbar */
+
+nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background-color: #4f3e2f;
+             position:fixed;
+    top:0;
+    z-index:999;
+    width: 100%;
+            
+        }
+
+.logo{
+    color:#b07d4f;
+    font-size:30px;
+    font-weight:bold;
+    animation:float 3s infinite ease-in-out;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:beige;
+   
+    transition:0.3s;
+}
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#d4a373;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+
+
+/* Hero Section */
+
+.contact-hero{
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.pexels.com/photos/2422700/pexels-photo-2422700.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-size:cover;
+    background-position:center;
+    height: 70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:beige;
+}
+
+.contact-hero h1{
+    font-size:60px;
+}
+
+/* Contact Section */
+
+.contact-section{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+    padding:80px 60px;
+    flex-wrap:wrap;
+}
+
+/* ===== Animations ===== */
+
+@keyframes fadeUp {
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatLogo {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0);}
+}
+
+/* Logo Animation */
+.logo{
+    animation:floatLogo 3s ease-in-out infinite;
+}
+
+/* Hero Animation */
+.contact-hero h1{
+    font-size:60px;
+    animation:fadeUp 1s ease;
+}
+
+/* Form Animation */
+.contact-form{
+    animation:fadeUp 1.2s ease;
+}
+
+/* Contact Info Animation */
+.contact-info{
+    animation:fadeUp 1.5s ease;
+}
+
+/* Input Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border:2px solid #d4a373;
+    box-shadow:0 0 10px rgba(212,163,115,0.4);
+}
+
+/* Button Hover */
+.btn{
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+    background:#b07d4f;
+    transform:scale(1.05);
+}
+
+/* Info Cards Hover */
+.info-box{
+    background:white;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:all 0.4s ease;
+}
+
+.info-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Nav Links Animation */
+nav ul li a{
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#b07d4f;
+    transition:0.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+/* Contact Form */
+
+.contact-form{
+    flex:1;
+    min-width:300px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#3e2723;
+    font-size:35px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:140px;
+    resize:none;
+}
+
+.btn{
+    background:#d4a373;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#b07d4f;
+}
+
+/* Contact Info */
+
+.contact-info{
+    flex:1;
+    min-width:300px;
+}
+
+.contact-info h2{
+    color:#3e2723;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.info-box{
+    background:white;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-box h3{
+    color:#b07d4f;
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background-color: #4f3e2f;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .contact-hero h1{
+        font-size:40px;
+    }
+
+    .contact-section{
+        padding:50px 20px;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">☕ CoffeeToffee</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact </a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="contact-hero">
+    <div>
+        <h1>☕ Contact Us</h1>
+        <p style="margin-top:15px;font-size:22px;">
+            We'd love to hear from you!
+        </p>
+    </div>
+</section>
+
+<section class="contact-section">
+
+    <div class="contact-form">
+        <h2>Send Message</h2>
+
+        <form action="#" method="post">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+        </form>
+    </div>
+
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <p>
+            We would love to hear from you. Whether you have a question,
+            feedback, or want to know more about our coffee, feel free
+            to contact us anytime.
+        </p>
+
+        <div class="info-box">
+            <h3>📍 Address</h3>
+            <p>123 Coffee Street, Karachi, Pakistan</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📞 Phone</h3>
+            <p>+92 300 1234567</p>
+        </div>
+
+        <div class="info-box">
+            <h3>✉️ Email</h3>
+            <p>info@CoffeeToffee.com</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🕒 Opening Hours</h3>
+            <p>Mon - Sun: 8:00 AM - 11:00 PM</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>@ 2026 CoffeeToffee | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

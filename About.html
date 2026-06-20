@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CoffeeToffee </title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-color: #f5f5f5;
+        }
+        nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+    background:#4f3e2f;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#b07d4f;
+    font-size:30px;
+    font-weight:bold;
+    animation:float 3s infinite ease-in-out;
+}
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#d4a373;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+        .about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 80px;
+            flex-wrap: wrap;
+        }
+        .about-video video{
+            
+            width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            
+        }
+        .about-content{
+            max-width: 600px;
+        }
+        .about-content h1{
+            font-size: 40px;
+            color: #4f3e2f;
+            margin-bottom: 20px;
+            
+        }
+        .about-content p{
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .btn{
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #ac723f;
+            color: beige;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background: rgb(218, 173, 114);
+        }
+        .features{
+            background-color: white;
+            padding: 70px 50px;
+            text-align: center;
+        }
+        .features h2{
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #4f3e2f;
+
+        }
+        .feature-boxes{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .box{
+            background-color: #a17b5a;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(o, o, o, 0.2);
+            transition: 0.3s;
+        }
+        .box:hover{
+            transform: translateY(-10px);
+            background-color: rgb(218, 173, 114);
+        }
+        .box h3{
+            margin-bottom: 15px;
+            color: #452b15;
+
+        }
+        .box p{
+            line-height: 1.6;
+        }
+
+        .reviews{
+             padding: 100px 60px;
+            align-items: center;
+        }
+        .reviews h2{
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 40px;
+            color: #4f3e2f;
+        }
+
+        .review-container{
+           
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.review-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    width:300px;
+}
+        footer{
+            background-color: #4f3e2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav>
+
+            <div class="logo"> ☕CoffeeToffee</div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact </a></li>
+                  <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+
+        </nav>
+     </header>
+     <section class="about">
+       <div class="about-video">
+    <video controls autoplay muted loop>
+        <source src="coffeeShop.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+        <div class="about-content">
+            <h1>About Our Coffee</h1>
+            <p>At CoffeeToffee, we believe every cup of coffee tells a story.
+               Our beans are carefully selected from the finest farms around the world and roasted with passion to deliver rich flavor and aroma.
+            </p>
+            <p>
+                Whether you are looking for a peaceful place to relax,
+                work, or enjoy with family or friends, CoffeeToffee offers
+                a warm and welcoming atmosphere for everyone.
+            </p>
+            <a href="menu.html" class="btn"> Explore Menu</a>
+        
+
+
+        </div>
+        
+
+     </section>
+     <hr>
+
+
+
+     <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-boxes">
+        <div class="box">
+            <h3>Premium Beans</h3>
+            <p>
+                We use high-quality coffee beans for a rich and smooth taste.
+            </p>
+
+        </div>
+        <div class="box">
+            <h3>Freshly Brewed</h3>
+            <p>
+                Every Coffee is freshly prepared by our expert baristas.
+            </p>
+
+        </div>
+        <div class="box">
+            <h3>Cozy Environment</h3>
+            <p>
+                Enjoy a comfortable and relaxing atmosphere with your loved ones.
+            </p>
+
+        </div>
+        </div>
+
+
+
+     </section>
+
+     <section class="reviews">
+
+    <h2>Customer Reviews</h2>
+
+    <div class="review-container">
+
+        <div class="review-card">
+            ⭐⭐⭐⭐⭐
+            <p>"Best coffee shop in town!"</p>
+            <h4>- Sarah</h4>
+        </div>
+
+        <div class="review-card">
+            ⭐⭐⭐
+            <p>"Amazing desserts and atmosphere."</p>
+            <h4>- Ahmed</h4>
+        </div>
+
+        <div class="review-card">
+            ⭐⭐⭐⭐
+            <p>"My favorite coffee place."</p>
+            <h4>- Ali</h4>
+        </div>
+        <a href="feedback.html" class="btn"> Share Your Thoughts </a>
+
+    </div>
+
+</section>
+     <footer>
+        <p>@ 2026 CoffeeToffee | All Rights Reserved</p>
+     </footer>
+
+    
+</body>
+</html>
